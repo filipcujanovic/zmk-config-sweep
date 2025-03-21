@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: ferris_rotated}
+layout: {zmk_keyboard: cradio}
 layers:
   default: [Q, W, E, R, T, Y, U, I, O, P, A, S, D, F, G, H, J, K, L, ;, Z, X, C, V, B, N, M, ',', ., /, symbol, ENTER, SPC, navigation]
   symbol:
@@ -37,7 +37,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   navigation:
-  - ''
+  - bluetooth
   - ''
   - ''
   - ''
@@ -58,7 +58,7 @@ layers:
   - RIGHT
   - Alt+BSPC
   - Gui+Z
-  - ''
+  - Gui+X
   - Gui+C
   - Gui+V
   - ''
@@ -82,6 +82,46 @@ layers:
   - '8'
   - '9'
   - '0'
+  - ''
+  - ''
+  - ''
+  - Gui+Sft+4
+  - Gui+Sft+5
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  bluetooth:
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
@@ -92,17 +132,12 @@ layers:
   - ''
   - ''
   - ''
+  - BT CLR
   - '&bootloader'
   - ''
   - ''
-  - Gui+Sft+4
-  - Gui+Sft+5
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}

@@ -11,13 +11,14 @@
 #define SYMBOLS 1
 #define NAVIGATION 2
 #define NUMBERS 3
+#define BLUETOOTH 4
 
 #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT) \
 combo_##NAME { \
     timeout-ms = <TIMEOUT>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    require-prior-idle-ms = <140>; \
+    require-prior-idle-ms = <110>; \
 };
 
 / {
@@ -29,6 +30,13 @@ combo_##NAME { \
             flavor = "balanced";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&sk>;
+        };
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
         };
     };
 
@@ -71,19 +79,29 @@ combo_##NAME { \
 
         navigation_layer {
             bindings = <
-                &none     &none    &none     &none      &none               &kp C_PREVIOUS &kp C_VOLUME_DOWN    &kp C_VOLUME_UP      &kp C_NEXT &kp C_PLAY_PAUSE
-                &sk LCTRL &sk LALT &sk LGUI  &sk LSHIFT &kp TAB             &kp LEFT       &kp DOWN             &kp UP               &kp RIGHT  &kp LA(BSPC)
-                &kp LG(Z) &none    &kp LG(C) &kp LG(V)  &none               &none          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none      &none
-                                             &trans     &trans              &trans         &trans
+                &mo BLUETOOTH &none     &none     &none      &none           &kp C_PREVIOUS &kp C_VOLUME_DOWN    &kp C_VOLUME_UP      &kp C_NEXT &kp C_PLAY_PAUSE
+                &sk LCTRL     &sk LALT  &sk LGUI  &skq LSHIFT &kp TAB         &kp LEFT       &kp DOWN             &kp UP               &kp RIGHT  &kp LA(BSPC)
+                &kp LG(Z)     &kp LG(X) &kp LG(C) &kp LG(V)  &none           &none          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none      &none
+                                                  &trans     &trans          &trans         &trans
             >;
         };
 
         numbers_layer {
             bindings = <
-                &kp N1       &kp N2       &kp N3       &kp N4         &kp N5              &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3   &bt BT_SEL 4        &none   &none   &none   &none   &none
-                &bt BT_CLR   &bootloader  &none        &kp LG(LS(N5)) &kp LG(LS(N5))      &none   &none   &none   &none   &none
-                                                       &trans         &trans              &trans  &trans
+                &kp N1 &kp N2 &kp N3 &kp N4         &kp N5              &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+                &none  &none  &none  &kp LG(LS(N4)) &kp LG(LS(N5))      &none   &none   &none   &none   &none
+                &none  &none  &none  &none          &none               &none   &none   &none   &none   &none
+                                     &trans         &trans              &trans  &trans
+
+            >;
+        };
+
+        bluetooth_layer {
+            bindings = <
+            &none   &none   &none   &none   &none             &none        &none        &none        &none        &none
+            &none   &none   &none   &none   &none             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+            &none   &none   &none   &none   &none             &bt BT_CLR   &bootloader  &none        &none        &none
+                                    &trans  &trans            &trans       &trans
 
             >;
         };
