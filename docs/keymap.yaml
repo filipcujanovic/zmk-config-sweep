@@ -72,16 +72,6 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   numbers:
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
   - ''
   - ''
   - Gui+Sft+4
@@ -92,6 +82,16 @@ layers:
   - ''
   - ''
   - ''
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
   - ''
   - ''
   - ''
@@ -144,9 +144,16 @@ layers:
 combos:
 - p: [1, 2]
   k: ''''
+  l: [default, symbol, navigation, numbers, bluetooth]
 - p: [2, 3]
   k: ESC
+  l: [default, symbol, navigation, numbers, bluetooth]
 - p: [20, 29]
   k: '&caps_word'
+  l: [default, symbol, navigation, numbers, bluetooth]
 - p: [6, 7]
   k: BSPC
+  l: [default, symbol, navigation, numbers, bluetooth]
+- p: [10, 11]
+  k: Ctl+S
+  l: [default]

@@ -13,12 +13,23 @@
 #define NUMBERS 3
 #define BLUETOOTH 4
 
-#define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT) \
+#define CHAR_W 1
+#define CHAR_E 2
+#define CHAR_R 3
+#define CHAR_U 6
+#define CHAR_I 7
+#define CHAR_A 10
+#define CHAR_S 11
+#define CHAR_Z 20
+#define BACKSLASH 29
+
+#define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, LAYERS) \
 combo_##NAME { \
     timeout-ms = <TIMEOUT>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     require-prior-idle-ms = <110>; \
+    layers = <LAYERS>; \
 };
 
 / {
@@ -50,10 +61,11 @@ combo_##NAME { \
 
     combos {
         compatible = "zmk,combos";
-        COMBO(sqt, &kp SQT, 1 2, 50)
-        COMBO(esc, &kp ESC, 2 3, 50)
-        COMBO(caps_word, &caps_word, 20 29, 50)
-        COMBO(bspc, &kp BSPC, 6 7, 50)
+        COMBO(sqt, &kp SQT, CHAR_W CHAR_E, 50, DEFAULT SYMBOLS NAVIGATION NUMBERS BLUETOOTH)
+        COMBO(esc, &kp ESC, CHAR_E CHAR_R, 50, DEFAULT SYMBOLS NAVIGATION NUMBERS BLUETOOTH)
+        COMBO(caps_word, &caps_word, CHAR_Z BACKSLASH, 50, DEFAULT SYMBOLS NAVIGATION NUMBERS BLUETOOTH)
+        COMBO(bspc, &kp BSPC, CHAR_U CHAR_I, 50, DEFAULT SYMBOLS NAVIGATION NUMBERS BLUETOOTH)
+        COMBO(tmux_prefix, &kp LC(S), CHAR_A CHAR_S, 50, DEFAULT)
     };
 
     keymap {
@@ -88,8 +100,8 @@ combo_##NAME { \
 
         numbers_layer {
             bindings = <
-                &kp N1 &kp N2 &kp N3         &kp N4         &kp N5       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
                 &none  &none  &kp LG(LS(N4)) &kp LG(LS(N5)) &none        &none   &none   &none   &none   &none
+                &kp N1 &kp N2 &kp N3         &kp N4         &kp N5       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
                 &none  &none  &none          &none          &none        &none   &none   &none   &none   &none
                                      &trans  &trans              &trans  &trans
 
