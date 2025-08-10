@@ -157,3 +157,6 @@ combos:
 - p: [10, 11]
   k: Ctl+S
   l: [default]
+- p: [11, 12]
+  k: Alt+S
+  l: [default]
