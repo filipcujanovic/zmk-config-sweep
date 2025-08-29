@@ -1,6 +1,7 @@
 layout: {zmk_keyboard: cradio}
 layers:
-  default: [Q, W, E, R, T, Y, U, I, O, P, A, S, D, F, G, H, J, K, L, ;, Z, X, C, V, B, N, M, ',', ., /, symbol, ENTER, SPC, navigation]
+  default_macos: [Q, W, E, R, T, Y, U, I, O, P, A, S, D, F, G, H, J, K, L, ;, Z, X, C, V, B, N, M, ',', ., /, '&dls_macos', ENTER, SPC, navigation_macos]
+  default_linux: [Q, W, E, R, T, Y, U, I, O, P, A, S, D, F, G, H, J, K, L, ;, Z, X, C, V, B, N, M, ',', ., /, '&dls_linux', ENTER, SPC, navigation_linux]
   symbol:
   - '`'
   - <
@@ -32,12 +33,12 @@ layers:
   - ''''
   - ':'
   - \
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  navigation:
-  - bluetooth
+  - {t: ▽, type: trans}
+  navigation_macos:
+  - adjust
   - ''
   - ''
   - ''
@@ -61,6 +62,41 @@ layers:
   - Gui+X
   - Gui+C
   - Gui+V
+  - ''
+  - ''
+  - BRIGHTNESS DEC
+  - BRIGHTNESS INC
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  navigation_linux:
+  - adjust
+  - ''
+  - ''
+  - ''
+  - ''
+  - PREVIOUS
+  - VOLUME DOWN
+  - VOLUME UP
+  - NEXT
+  - PLAY PAUSE
+  - {t: LCTRL, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: LGUI, h: sticky}
+  - {t: LSHIFT, h: sticky}
+  - TAB
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - Ctl+BSPC
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
   - ''
   - ''
   - BRIGHTNESS DEC
@@ -102,16 +138,16 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  bluetooth:
+  adjust:
   - {type: held}
+  - {t: default_linux, h: toggle}
   - ''
   - ''
   - ''
-  - '&bootloader'
   - ''
   - ''
   - ''
@@ -131,7 +167,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - '&bootloader'
   - BT CLR
   - ''
   - ''
@@ -144,19 +180,19 @@ layers:
 combos:
 - p: [1, 2]
   k: ''''
-  l: [default, symbol, navigation, numbers, bluetooth]
+  l: [default_macos, default_linux, symbol, navigation_macos, navigation_linux, numbers, adjust]
 - p: [2, 3]
   k: ESC
-  l: [default, symbol, navigation, numbers, bluetooth]
+  l: [default_macos, default_linux, symbol, navigation_macos, navigation_linux, numbers, adjust]
 - p: [20, 29]
   k: '&caps_word'
-  l: [default, symbol, navigation, numbers, bluetooth]
+  l: [default_macos, default_linux, symbol, navigation_macos, navigation_linux, numbers, adjust]
 - p: [6, 7]
   k: BSPC
-  l: [default, symbol, navigation, numbers, bluetooth]
+  l: [default_macos, default_linux, symbol, navigation_macos, navigation_linux, numbers, adjust]
 - p: [10, 11]
   k: Ctl+S
-  l: [default]
+  l: [default_macos, default_linux]
 - p: [11, 12]
   k: Alt+S
-  l: [default]
+  l: [default_macos, default_linux]
