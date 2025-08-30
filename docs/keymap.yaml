@@ -144,10 +144,10 @@ layers:
   - {type: held}
   adjust:
   - {type: held}
-  - {t: default_linux, h: toggle}
   - ''
   - ''
   - ''
+  - '&bootloader'
   - ''
   - ''
   - ''
@@ -167,7 +167,7 @@ layers:
   - ''
   - ''
   - ''
-  - '&bootloader'
+  - ''
   - BT CLR
   - ''
   - ''
@@ -190,6 +190,9 @@ combos:
 - p: [6, 7]
   k: BSPC
   l: [default_macos, default_linux, symbol, navigation_macos, navigation_linux, numbers, adjust]
+- p: [8, 9]
+  k: {t: default_linux, h: toggle}
+  l: [default_macos, default_linux]
 - p: [10, 11]
   k: Ctl+S
   l: [default_macos, default_linux]

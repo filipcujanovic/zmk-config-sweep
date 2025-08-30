@@ -20,6 +20,8 @@
 #define CHAR_R 3
 #define CHAR_U 6
 #define CHAR_I 7
+#define CHAR_O 8
+#define CHAR_P 9
 #define CHAR_A 10
 #define CHAR_S 11
 #define CHAR_D 12
@@ -84,6 +86,7 @@ combo_##NAME { \
         COMBO(esc, &kp ESC, CHAR_E CHAR_R, 15, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
         COMBO(caps_word, &caps_word, CHAR_Z CHAR_BACKSLASH, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
         COMBO(bspc, &kp BSPC, CHAR_U CHAR_I, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(toggle_linux, &tog DEFAULT_LINUX, CHAR_O CHAR_P, 50, DEFAULT_MACOS DEFAULT_LINUX)
         COMBO(tmux_prefix, &kp LC(S), CHAR_A CHAR_S, 15, DEFAULT_MACOS DEFAULT_LINUX)
         COMBO(tmux_session_prefix, &kp LA(S), CHAR_S CHAR_D, 15, DEFAULT_MACOS DEFAULT_LINUX)
     };
@@ -148,9 +151,9 @@ combo_##NAME { \
 
         adjust_layer {
             bindings = <
-            &none   &tog DEFAULT_LINUX &none   &none   &none             &none        &none        &none        &none        &none
-            &none   &none              &none   &none   &none             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-            &none   &none              &none   &none   &bootloader       &bt BT_CLR   &none        &none        &none        &none
+            &none  &none  &none  &none   &bootloader       &none        &none        &none        &none        &none
+            &none  &none  &none  &none   &none             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+            &none  &none  &none  &none   &none             &bt BT_CLR   &none        &none        &none        &none
                                     &trans  &trans            &trans       &trans
 
             >;
