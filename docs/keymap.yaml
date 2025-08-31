@@ -190,7 +190,7 @@ combos:
 - p: [6, 7]
   k: BSPC
   l: [default_macos, default_linux, symbol, navigation_macos, navigation_linux, numbers, adjust]
-- p: [8, 9]
+- p: [10, 19]
   k: {t: default_linux, h: toggle}
   l: [default_macos, default_linux]
 - p: [10, 11]
