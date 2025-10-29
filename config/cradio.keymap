@@ -15,18 +15,6 @@
 #define NUMBERS 5
 #define ADJUST 6
 
-#define CHAR_W 1
-#define CHAR_E 2
-#define CHAR_R 3
-#define CHAR_U 6
-#define CHAR_I 7
-#define CHAR_A 10
-#define CHAR_S 11
-#define CHAR_D 12
-#define CHAR_SEMICOLON 19
-#define CHAR_Z 20
-#define CHAR_BACKSLASH 29
-
 #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, LAYERS) \
 combo_##NAME { \
     timeout-ms = <TIMEOUT>; \
@@ -81,14 +69,20 @@ combo_##NAME { \
 
     combos {
         compatible = "zmk,combos";
-        COMBO(sqt, &kp SQT, CHAR_W CHAR_E, 15, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(esc, &kp ESC, CHAR_E CHAR_R, 15, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(caps_word, &caps_word, CHAR_Z CHAR_BACKSLASH, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(bspc, &kp BSPC, CHAR_U CHAR_I, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(toggle_linux, &tog DEFAULT_LINUX, CHAR_A CHAR_SEMICOLON, 50, DEFAULT_MACOS DEFAULT_LINUX)
-        COMBO(tmux_prefix, &kp LC(S), CHAR_A CHAR_S, 15, DEFAULT_MACOS DEFAULT_LINUX)
-        COMBO(tmux_session_prefix, &kp LA(S), CHAR_S CHAR_D, 15, DEFAULT_MACOS DEFAULT_LINUX)
+        COMBO(sqt, &kp SQT, 7 8, 15, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(esc, &kp ESC, 2 3, 15, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(caps_word, &caps_word, 20 29, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(bspc, &kp BSPC, 6 7, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(toggle_linux, &tog DEFAULT_LINUX, 10 19, 50, DEFAULT_MACOS DEFAULT_LINUX)
+        COMBO(tmux_prefix, &kp LC(S), 10 11, 15, DEFAULT_MACOS DEFAULT_LINUX)
+        COMBO(tmux_session_prefix, &kp LA(S), 11 12, 15, DEFAULT_MACOS DEFAULT_LINUX)
     };
+// ______________________________  ____________________________
+// |  0  |   1 |  2  |  3  |  4  \/   5 |   6 |  7 |  8 |   9 |
+// | 10  |  11 | 12  | 13  | 14  /\  15 |  16 | 17 | 18 |  19 |
+// | 20  |  21 | 22  | 23  | 24 /  \ 25 |  26 | 27 | 28 |  29 |
+//                   | 30  | 31/    \32 |  33 |
+//                       ------      ------
 
     keymap {
         compatible = "zmk,keymap";

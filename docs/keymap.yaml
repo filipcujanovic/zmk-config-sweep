@@ -178,7 +178,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
 combos:
-- p: [1, 2]
+- p: [7, 8]
   k: ''''
   l: [default_macos, default_linux, symbol, navigation_macos, navigation_linux, numbers, adjust]
 - p: [2, 3]
