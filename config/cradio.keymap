@@ -14,6 +14,8 @@
 #define NAVIGATION_LINUX 4
 #define NUMBERS 5
 #define ADJUST 6
+#define DEFAULT_TIMEOUT 15
+#define LONGER_TIMEOUT 50
 
 #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT, LAYERS) \
 combo_##NAME { \
@@ -69,13 +71,15 @@ combo_##NAME { \
 
     combos {
         compatible = "zmk,combos";
-        COMBO(sqt, &kp SQT, 12 13, 15, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(esc, &kp ESC, 2 3, 15, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(caps_word, &caps_word, 20 29, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(bspc, &kp BSPC, 6 7, 50, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
-        COMBO(toggle_linux, &tog DEFAULT_LINUX, 10 19, 50, DEFAULT_MACOS DEFAULT_LINUX)
-        COMBO(tmux_prefix, &kp LC(S), 10 11, 15, DEFAULT_MACOS DEFAULT_LINUX)
-        COMBO(tmux_session_prefix, &kp LA(S), 11 12, 15, DEFAULT_MACOS DEFAULT_LINUX)
+        COMBO(sqt, &kp SQT, 12 13, DEFAULT_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(esc, &kp ESC, 2 3, DEFAULT_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(caps_word, &caps_word, 20 29, LONGER_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(bspc, &kp BSPC, 6 7, LONGER_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX SYMBOLS NAVIGATION_MACOS NAVIGATION_LINUX NUMBERS ADJUST)
+        COMBO(toggle_linux, &tog DEFAULT_LINUX, 10 19, LONGER_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX)
+        COMBO(tmux_prefix, &kp LC(S), 10 11, DEFAULT_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX)
+        COMBO(tmux_session_prefix, &kp LA(S), 11 12, DEFAULT_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX)
+        COMBO(screen_shot_capture, $kp LG(LS(N4)), 22 23, DEFAULT_TIMEOUT, DEFAULT_MACOS)
+        COMBO(screen_shot_capture, $kp LG(LS(N5)), 23 24, DEFAULT_TIMEOUT, DEFAULT_MACOS)
     };
 // ______________________________  ____________________________
 // |  0  |   1 |  2  |  3  |  4  \/   5 |   6 |  7 |  8 |   9 |
@@ -134,10 +138,10 @@ combo_##NAME { \
 
         numbers_layer {
             bindings = <
-                &kp F1 &kp F2 &kp F3         &kp F4         &kp F5   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-                &kp N1 &kp N2 &kp N3         &kp N4         &kp N5   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-                &none  &none  &kp LG(LS(N4)) &kp LG(LS(N5)) &none    &none   &none   &none   &none   &none
-                              &trans         &trans         &trans   &trans
+                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+                &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+                &kp F11 &kp F12 &kp F13 &kp F13 &kp F14    &kp F15 &kp F16 &kp F17 &kp F18 &kp F19
+                                        &trans  &trans     &trans  &trans
 
             >;
         };
@@ -148,7 +152,6 @@ combo_##NAME { \
             &none  &none  &none  &none   &none             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
             &none  &none  &none  &none   &none             &bt BT_CLR   &none        &none        &none        &none
                                     &trans  &trans            &trans       &trans
-
             >;
         };
 
