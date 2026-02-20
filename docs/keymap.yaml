@@ -128,16 +128,16 @@ layers:
   - '8'
   - '9'
   - '0'
-  - ''
-  - ''
-  - Gui+Sft+4
-  - Gui+Sft+5
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - F11
+  - F12
+  - F13
+  - F13
+  - F14
+  - F15
+  - F16
+  - F17
+  - F18
+  - F19
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -199,3 +199,9 @@ combos:
 - p: [11, 12]
   k: Alt+S
   l: [default_macos, default_linux]
+- p: [22, 23]
+  k: Gui+Sft+4
+  l: [default_macos]
+- p: [23, 24]
+  k: Gui+Sft+5
+  l: [default_macos]

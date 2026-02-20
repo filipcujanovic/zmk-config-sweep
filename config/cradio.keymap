@@ -78,8 +78,8 @@ combo_##NAME { \
         COMBO(toggle_linux, &tog DEFAULT_LINUX, 10 19, LONGER_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX)
         COMBO(tmux_prefix, &kp LC(S), 10 11, DEFAULT_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX)
         COMBO(tmux_session_prefix, &kp LA(S), 11 12, DEFAULT_TIMEOUT, DEFAULT_MACOS DEFAULT_LINUX)
-        COMBO(screen_shot_capture, $kp LG(LS(N4)), 22 23, DEFAULT_TIMEOUT, DEFAULT_MACOS)
-        COMBO(screen_shot_capture, $kp LG(LS(N5)), 23 24, DEFAULT_TIMEOUT, DEFAULT_MACOS)
+        COMBO(screen_shot_capture, &kp LG(LS(N4)), 22 23, DEFAULT_TIMEOUT, DEFAULT_MACOS)
+        COMBO(screen_shot_capture, &kp LG(LS(N5)), 23 24, DEFAULT_TIMEOUT, DEFAULT_MACOS)
     };
 // ______________________________  ____________________________
 // |  0  |   1 |  2  |  3  |  4  \/   5 |   6 |  7 |  8 |   9 |
