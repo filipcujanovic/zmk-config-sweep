@@ -120,18 +120,18 @@ combo_##NAME { \
 
         navigation_macos_layer {
             bindings = <
-                &mo ADJUST &none     &none     &none       &none           &kp C_PREVIOUS &kp C_VOLUME_DOWN    &kp C_VOLUME_UP      &kp C_NEXT &kp C_PLAY_PAUSE
-                &sk LCTRL  &sk LALT  &sk LGUI  &skq LSHIFT &kp TAB         &kp LEFT       &kp DOWN             &kp UP               &kp RIGHT  &kp LA(BSPC)
-                &kp LG(Z)  &kp LG(X) &kp LG(C) &kp LG(V)   &none           &none          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none      &none
+                &mo ADJUST        &none           &none           &none       &none           &kp C_PREVIOUS &kp C_VOLUME_DOWN    &kp C_VOLUME_UP      &kp C_NEXT &kp C_PLAY_PAUSE
+                &isk LCTRL LCTRL  &isk LALT LALT  &isk LGUI LGUI  &skq LSHIFT &kp TAB         &kp LEFT       &kp DOWN             &kp UP               &kp RIGHT  &kp LA(BSPC)
+                &kp LG(Z)         &kp LG(X)       &kp LG(C)       &kp LG(V)   &none           &none          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none      &none
                                                &trans      &trans          &trans         &trans
             >;
         };
 
         navigation_linux_layer {
             bindings = <
-                &mo ADJUST &none     &none     &none       &none           &kp C_PREVIOUS &kp C_VOLUME_DOWN    &kp C_VOLUME_UP      &kp C_NEXT &kp C_PLAY_PAUSE
-                &sk LCTRL  &sk LALT  &sk LGUI  &skq LSHIFT &kp TAB         &kp LEFT       &kp DOWN             &kp UP               &kp RIGHT  &kp LC(BSPC)
-                &kp LC(Z)  &kp LC(X) &kp LC(C) &kp LC(V)   &none           &none          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none      &none
+                &mo ADJUST        &none           &none           &none       &none           &kp C_PREVIOUS &kp C_VOLUME_DOWN    &kp C_VOLUME_UP      &kp C_NEXT &kp C_PLAY_PAUSE
+                &isk LCTRL LCTRL  &isk LALT LALT  &isk LGUI LGUI  &skq LSHIFT &kp TAB         &kp LEFT       &kp DOWN             &kp UP               &kp RIGHT  &kp LC(BSPC)
+                &kp LC(Z)         &kp LC(X)       &kp LC(C)       &kp LC(V)   &none           &none          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none      &none
                                                   &trans      &trans          &trans         &trans
             >;
         };
